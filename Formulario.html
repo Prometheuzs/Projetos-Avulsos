@@ -1,144 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Se Registrar</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=visibility,visibility_off" />
-
-
-
-</head>
-<body>
-    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=visibility,visibility_off"
+    />
+  </head>
+  <body>
     <form action="">
-        <div id="nomeUserdiv">
-            <label for="nomeUser">Nome completo</label>
-            <input type="text" name="nomeUser" id="nomeUser" placeholder="Fulano D. Tao">
+    <div id="headerFormdiv">
+        <header id="headerForm">
+            <h1>Registrar</h1>
+        </header>
+    </div>
+      <div id="nomeUserdiv">
+        <label for="nomeUser">Nome completo</label>
+        <input
+          type="text"
+          name="nomeUser"
+          id="nomeUser"
+          placeholder="Fulano D. Tao"
+        />
+      </div>
+
+      <div id="emailUserdiv">
+        <label for="emailUser">Email</label>
+        <input
+          type="email"
+          name="emailUser"
+          id="emailUser"
+          placeholder="Fulano@teste.com"
+        />
+      </div>
+
+      <div id="idadeUserdiv">
+        <label for="idadeUser">Idade</label>
+        <input
+          type="date"
+          name="idadeUser"
+          id="idadeUser"
+          placeholder="Fulano@teste.com"
+          min="10"
+        />
+      </div>
+
+      <div id="senhaUserdiv">
+        <div id="labelsenhaUser">
+          <label for="senhaUser">Senha</label>
+          <span
+            onclick="passwordAlter()"
+            id="btnPassword"
+            class="material-symbols-outlined"
+            style="cursor: pointer;"
+            >visibility_off</span
+          >
         </div>
-    
-        <div id="emailUserdiv">
-            <label for="emailUser">Email</label>
-            <input type="email" name="emailUser" id="emailUser" placeholder="Fulano@teste.com">
-        </div>
-    
-        <div id="idadeUserdiv">
-            <label for="idadeUser">idade</label>
-            <input type="date" name="idadeUser" id="idadeUser" placeholder="Fulano@teste.com" min="10">
-        </div>
-    
-        <div id="senhaUserdiv">
-            <div id="labelsenhaUser">
-                <label for="senhaUser">senha</label>
-                <span onclick="passwordAlter()" id="btnPassword" class="material-symbols-outlined">visibility_off</span>
-            </div>
-            <input type="password" name="senhaUser" id="senhaUser" min="10" show>
-        </div>
-    
-        <div id="submitDiv">
-            <button type="submit">Registrar</button>
-        </div>
-    
+        <input type="password" name="senhaUser" id="senhaUser" min="10" show />
+      </div>
+
+      <div id="submitDiv">
+        <button type="submit">Registrar</button>
+      </div>
     </form>
 
-</body>
+
+    
+  </body>
 </html>
 
-
 <script>
-    const btnPassword = document.getElementById('btnPassword')
-    const senhaUser = document.getElementById('senhaUser');
-    function passwordAlter(){
-
-        if(senhaUser.type == 'password'){
-            senhaUser.type = 'text'
-            btnPassword.textContent = 'visibility'
-        }else{
-            senhaUser.type = 'password'
-            btnPassword.textContent = 'visibility_off'
-        }
-
+  const btnPassword = document.getElementById("btnPassword");
+  const senhaUser = document.getElementById("senhaUser");
+  function passwordAlter() {
+    if (senhaUser.type == "password") {
+      senhaUser.type = "text";
+      btnPassword.textContent = "visibility";
+    } else {
+      senhaUser.type = "password";
+      btnPassword.textContent = "visibility_off";
     }
-
+  }
 </script>
 
-
-
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
 
-    @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Google Sans", sans-serif;
+    border: none;
+    outline: none;
+  }
 
-    *{
-        margin: 0;
-        padding: 0;
-        font-family: "Google Sans", sans-serif;
-        border: none;
-        outline: none;
+  div {
+    margin-top: 2.5vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #labelsenhaUser {
+    margin-top: 0;
+    display: flexbox;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #btnPassword {
+    margin-left: auto;
+  }
+
+  #labelsenhaUser > label {
+    margin-right: 0.5vw;
+  }
+
+  form{
+    background-color: hsl(0, 0%, 97.25%);
+    padding: 2rem;
+    padding-top: 0;
+    margin-top: 5rem;
+    border-radius: 2rem;
+    box-shadow: 5rem, 0rem, 1rem, hsl(0, 0%, 3%);
+  }
+
+
+  
+  #headerFormdiv{
+    background-color: hsl(0, 65%, 65%);
+    color: hsl(0, 0%, 97.25%);
+    margin: -2rem;
+    padding: 2rem;
+    font-size: larger;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
     }
 
 
-    div{
-        margin-top: 2.5vh;
-        display: flex;
-        flex-direction: column;
+  @media (max-width: 768px) {
+    form {
+      min-width: 75vw;
+      justify-self: center;
     }
+  }
 
-    #labelsenhaUser {
-        margin-top: 0;
-        display: flexbox;
-        flex-direction: row;
-        align-items: center;
+  @media (max-width: 992px) {
+    form {
+      min-width: 75vw;
+      justify-self: center;
     }
+  }
 
-    #btnPassword {
-
-        margin-left: auto;
-
+  @media (min-width: 993px) {
+    form {
+      min-width: 30vw;
+      justify-self: center;
     }
+  }
 
-    #labelsenhaUser > label{
-        margin-right: 0.5vw;
-    }
+  #submitDiv {
+    max-width: 10rem;
+    /* margin-left: auto; */
+    margin-right: auto;
+  }
 
-    @media (max-width: 768px){
-       form{
-        min-width: 75vw;
-        justify-self: center;
-        } 
-    }
+  #nomeUserdiv{
+    margin-top: 5rem;
+  }
 
-    @media (max-width: 992px){
-       form{
-        min-width: 75vw;
-        justify-self: center;
-        } 
-    }
+  input {
+    border-radius: 0.5rem;
+    border: 0.25vw solid hsl(0, 65%, 65%);
+    padding: 1rem;
+    font-size: 1rem;
+    transition: 250ms;
+    background-color: hsl(0, 0%, 97.25%);
+  }
 
-    @media (min-width: 993px){
-       form{
-        min-width: 30vw;
-        justify-self: center;
-        } 
-    }
-    
-    #submitDiv{
-        max-width: 10rem;
-        margin-left: auto;
-        margin-right: auto;
-        
-    }
+  label,
+  button {
+    font-size: 1.125rem;
+  }
 
-    input{
-        border-radius: 0.5rem;
-        border: 0.25vw solid hsl(0, 65%, 65%);
-        padding: 1rem;
-        font-size: 1rem;
-    }
+  button{
+    padding: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: hsl(0, 65%, 65%);
+    color: hsl(0, 0%, 100%);
+    border-radius: 0.25rem;
+    transition: 250ms;
+  }
 
-    label, button{
-        font-weight: bolder;
-        font-size: 1.125rem;
-    }
+  button:hover{
+    background-color: hsl(0, 65%, 50%);
+  }
+
+  input:hover{
+    box-shadow: 0rem 0rem 0.5rem hsl(0, 65%, 50%, 50%);
+  }
+  input:focus{
+    box-shadow: 0rem 0rem 1rem hsl(0, 65%, 65%, 100%);
+  }
+
+  
+
 
 </style>
