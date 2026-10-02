@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello Oliginal</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Trello Oliginal</h1>
+        </header>
+    <main>
+        <button onclick="novoQuadro()">Novo quadro</button>
+        
+        <form id="editarQuadroForm" hidden>
+            <label for="formTitulo">Titulo</label>
+            <input type="text" id="formTitulo">
+
+            <label for="formParagraph">Descrição</label>
+            <input type="text" id="formParagraph">
+
+            <ol id="formLista"></ol>
+
+
+            <div id="botaoFinalizar"></div>
+        </form>
+
+        <section id="quadrosSection">
+
+            <div id="quadro-1" style="border: 1rem solid black; padding: 1rem;">
+                <header id="q1-Header">
+                    <h3 id="q1-Titulo">Quadro - Teste</h3>
+                    <button onclick="editQuadro(1)">Editar quadro</button>
+                </header>
+                <p id="q1-Paragraph">Esse é um quadro teste, ele serve para testar coisas</p>
+                <ol id="q1-Lista">
+                    <li id="q1-Li1"><input type="checkbox"><span id="q1-Li1span">Criar quadro </span></li>
+                    <li id="q1-Li2"><input type="checkbox"><span id="q1-Li2span">Montar quadro</span></li>
+                    <li id="q1-Li3"><input type="checkbox"><span id="q1-Li3span">Mostrar quadro</span></li>
+                </ol>
+                
+                <button onclick="excluirQuadro(1)">Excluir quadro</button>
+            </div>
+
+
+
+
+        </section>
+
+    </main>
+
+
+</body>
+</html>
